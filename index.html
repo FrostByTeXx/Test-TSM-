@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TSM — digital-агентство из Казахстана. Запускаем сайты за 3 дня: быстро, аккуратно и с фокусом на заявки.">
-  <meta name="theme-color" content="#07080B">
-  <title>TSM — Сайт за 3 дня, который приносит клиентов</title>
+  <meta name="description" content="TSM — digital-агентство из Казахстана. Создаём современные сайты за 3 дня: быстро, аккуратно и с фокусом на заявки.">
+  <meta name="theme-color" content="#08101f">
+  <title>TSM — Современные сайты для бизнеса</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            base: '#07080B',
-            panel: '#0F1218',
-            panelSoft: '#151922',
-            textSoft: '#9BA3B7',
-            line: 'rgba(255,255,255,0.08)',
-            gold: '#FFC83D',
-            goldDeep: '#F3B116',
-            goldSoft: 'rgba(255,200,61,0.16)',
-            blue: '#4D79FF',
-            whiteSoft: '#F7F8FA'
+            ink: "#08101f",
+            inkSoft: "#0f1830",
+            panel: "rgba(12, 19, 37, 0.72)",
+            line: "rgba(255, 255, 255, 0.08)",
+            mist: "#9ca8c7",
+            gold: "#ffb84d",
+            coral: "#ff6b57",
+            mint: "#84f5c2",
+            sky: "#76a8ff",
+            violet: "#8e7dff",
+            paper: "#eef3ff"
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Manrope', 'Inter', 'sans-serif']
+            sans: ["Manrope", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"]
           },
           boxShadow: {
-            glow: '0 20px 70px rgba(255, 200, 61, 0.18)',
-            card: '0 20px 50px rgba(7, 8, 11, 0.08)',
-            dark: '0 28px 70px rgba(0, 0, 0, 0.42)'
-          },
-          backgroundImage: {
-            heroGrid: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-            goldLine: 'linear-gradient(90deg, rgba(255,200,61,0), rgba(255,200,61,0.9), rgba(255,200,61,0))'
+            soft: "0 24px 90px rgba(8, 16, 31, 0.28)",
+            glow: "0 24px 70px rgba(255, 184, 77, 0.25)",
+            brand: "0 22px 60px rgba(118, 168, 255, 0.16), 0 16px 44px rgba(255, 107, 87, 0.14)"
           }
         }
       }
@@ -53,136 +50,208 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #07080B;
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 10% 6%, rgba(255, 184, 77, 0.16), transparent 18%),
+        radial-gradient(circle at 86% 10%, rgba(118, 168, 255, 0.18), transparent 22%),
+        radial-gradient(circle at 64% 18%, rgba(142, 125, 255, 0.12), transparent 18%),
+        linear-gradient(180deg, #08101f 0%, #0b1224 42%, #f4f7ff 42%, #eef3ff 100%);
+      color: #fff;
       overflow-x: hidden;
     }
 
-    .page-shell {
+    .page-noise::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.14));
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       background:
-        radial-gradient(circle at 18% 10%, rgba(255, 200, 61, 0.08), transparent 22%),
-        radial-gradient(circle at 85% 28%, rgba(77, 121, 255, 0.12), transparent 22%),
-        linear-gradient(180deg, #090B0E 0%, #07080B 100%);
+        linear-gradient(145deg, rgba(255,255,255,0.24), rgba(255,255,255,0.04)),
+        linear-gradient(135deg, #ffcd77 0%, #ffb84d 34%, #ff6b57 64%, #76a8ff 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.32),
+        0 18px 36px rgba(8, 16, 31, 0.34);
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
-    .hero-grid {
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 64px 64px;
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(8,16,31,0.56), rgba(8,16,31,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
     }
 
-    .gold-button {
-      background: linear-gradient(180deg, #FFD96A 0%, #FFC83D 100%);
-      box-shadow: 0 12px 30px rgba(255, 200, 61, 0.22);
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 9px;
+      left: 13px;
+      top: 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      transform: rotate(-27deg);
+      box-shadow: 0 15px 0 rgba(255,255,255,0.95);
     }
 
-    .gold-button:hover {
-      box-shadow: 0 16px 42px rgba(255, 200, 61, 0.33);
+    .brand-mark span {
+      position: absolute;
+      width: 10px;
+      height: 31px;
+      right: 13px;
+      top: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.96);
+      transform: skewY(-26deg);
+      box-shadow: -18px 18px 0 -4px rgba(255,255,255,0.2);
     }
 
-    .ghost-button {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.14);
+    .brand-chip {
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 18px 46px rgba(8, 16, 31, 0.22);
     }
 
-    .ghost-button:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.26);
-    }
-
-    .glass-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
       border: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
 
-    .screen-light {
+    .hero-card {
       background:
-        radial-gradient(circle at top right, rgba(77, 121, 255, 0.16), transparent 25%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF2F8 100%);
+        linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.04)),
+        rgba(10, 18, 33, 0.84);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 30px 100px rgba(4, 10, 20, 0.42), inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
-    .screen-dark {
-      background:
-        radial-gradient(circle at 80% 18%, rgba(255, 200, 61, 0.16), transparent 26%),
-        linear-gradient(180deg, #17181C 0%, #0F1013 100%);
+    .shine-button {
+      background: linear-gradient(135deg, #ffd48a 0%, #ffb84d 34%, #ff8d5d 70%, #8e7dff 100%);
+      box-shadow: 0 16px 40px rgba(255, 184, 77, 0.26), 0 10px 30px rgba(118,168,255,0.12);
     }
 
-    .showcase-shadow {
-      filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.45));
+    .shine-button:hover {
+      box-shadow: 0 22px 48px rgba(255, 184, 77, 0.34), 0 14px 34px rgba(118,168,255,0.16);
     }
 
-    .tilt-card {
-      transform-style: preserve-3d;
-      will-change: transform;
+    .ghost-button {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .noise::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.04;
-      background-image: radial-gradient(circle at 20% 20%, #fff 0.5px, transparent 0.8px);
-      background-size: 24px 24px;
+    .ghost-button:hover {
+      background: rgba(255,255,255,0.08);
     }
 
     .section-light {
-      background: linear-gradient(180deg, #FAFBFD 0%, #F3F5F8 100%);
+      color: #09101d;
     }
 
-    .section-divider {
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.18), rgba(255,255,255,0));
+    .surface-light {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.82)),
+        linear-gradient(135deg, rgba(255,184,77,0.04), rgba(118,168,255,0.04));
     }
 
-    .floating-ring {
-      position: absolute;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 9999px;
+    .case-card,
+    .price-card,
+    .step-card,
+    .signal-card {
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .case-card:hover,
+    .price-card:hover,
+    .step-card:hover,
+    .signal-card:hover {
+      transform: translateY(-6px);
     }
 
     .reveal {
-      will-change: transform, opacity;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .hidden-until-js {
-      opacity: 0;
-      transform: translateY(12px);
+    .device-screen {
+      background:
+        radial-gradient(circle at 78% 16%, rgba(118, 168, 255, 0.22), transparent 25%),
+        radial-gradient(circle at 18% 0%, rgba(255,184,77,0.10), transparent 22%),
+        linear-gradient(180deg, #fefefe 0%, #eef3ff 100%);
+    }
+
+    .accent-line {
+      background: linear-gradient(90deg, rgba(255,184,77,0), rgba(255,184,77,0.9), rgba(142,125,255,0.85), rgba(118,168,255,0.85), rgba(255,184,77,0));
+    }
+
+    .hero-aura {
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.12), rgba(255,255,255,0) 65%),
+        radial-gradient(circle at 40% 40%, rgba(142,125,255,0.18), transparent 45%);
+      filter: blur(10px);
     }
 
     .input-field:focus {
-      border-color: rgba(255, 200, 61, 0.8);
-      box-shadow: 0 0 0 4px rgba(255, 200, 61, 0.14);
+      border-color: rgba(255, 184, 77, 0.95);
+      box-shadow: 0 0 0 4px rgba(255, 184, 77, 0.18);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(255, 184, 77, 0.14), transparent 26%),
+          radial-gradient(circle at top right, rgba(118, 168, 255, 0.18), transparent 30%),
+          linear-gradient(180deg, #08101f 0%, #0b1224 48%, #f4f7ff 48%, #eef3ff 100%);
+      }
     }
   </style>
 </head>
-<body class="page-shell text-white">
+<body class="page-noise">
   <div class="fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute left-[-8%] top-[6%] h-72 w-72 rounded-full bg-gold/10 blur-3xl"></div>
-    <div class="absolute right-[-8%] top-[14%] h-80 w-80 rounded-full bg-blue/10 blur-3xl"></div>
-    <div class="absolute bottom-[12%] left-[30%] h-72 w-72 rounded-full bg-gold/8 blur-3xl"></div>
+    <div class="absolute left-[-10%] top-20 h-72 w-72 rounded-full bg-gold/20 blur-3xl"></div>
+    <div class="absolute right-[-8%] top-12 h-80 w-80 rounded-full bg-sky/20 blur-3xl"></div>
+    <div class="absolute bottom-[35%] left-[35%] h-64 w-64 rounded-full bg-violet/10 blur-3xl"></div>
   </div>
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-base/80 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-      <a href="#hero" class="flex items-center gap-3 text-white">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="brand-mark"><span></span></div>
         <div>
-          <div class="font-display text-[30px] font-extrabold leading-none tracking-[-0.08em]">TSM</div>
-          <div class="mt-1 text-[9px] uppercase tracking-[0.28em] text-white/60">Trend Site Master</div>
+          <div class="font-display text-xl font-bold tracking-[-0.04em] text-white">TSM</div>
+          <div class="text-[10px] uppercase tracking-[0.32em] text-white/55">trend site master</div>
         </div>
       </a>
 
       <nav class="hidden items-center gap-8 text-sm text-white/70 lg:flex">
         <a href="#hero" class="transition hover:text-white">Главная</a>
-        <a href="#packages" class="transition hover:text-white">Пакеты</a>
+        <a href="#services" class="transition hover:text-white">Услуги</a>
         <a href="#portfolio" class="transition hover:text-white">Кейсы</a>
         <a href="#process" class="transition hover:text-white">Процесс</a>
         <a href="#cta" class="transition hover:text-white">Контакты</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="#cta" class="gold-button hidden rounded-xl px-5 py-3 text-sm font-semibold text-black transition sm:inline-flex">Получить сайт</a>
-        <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+        <a href="#cta" class="shine-button hidden rounded-2xl px-5 py-3 text-sm font-semibold text-black transition sm:inline-flex">Запустить проект</a>
+        <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white lg:hidden" aria-label="Открыть меню" aria-expanded="false">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
@@ -190,299 +259,302 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-panel/95 lg:hidden">
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-inkSoft/95 lg:hidden">
       <div class="mx-auto flex max-w-7xl flex-col px-4 py-4 text-sm text-white/78 sm:px-6">
-        <a href="#hero" class="rounded-xl px-3 py-3 transition hover:bg-white/5">Главная</a>
-        <a href="#packages" class="rounded-xl px-3 py-3 transition hover:bg-white/5">Пакеты</a>
-        <a href="#portfolio" class="rounded-xl px-3 py-3 transition hover:bg-white/5">Кейсы</a>
-        <a href="#process" class="rounded-xl px-3 py-3 transition hover:bg-white/5">Процесс</a>
-        <a href="#cta" class="mt-2 gold-button rounded-xl px-4 py-3 text-center font-semibold text-black">Получить сайт</a>
+        <a href="#hero" class="rounded-2xl px-3 py-3 transition hover:bg-white/5">Главная</a>
+        <a href="#services" class="rounded-2xl px-3 py-3 transition hover:bg-white/5">Услуги</a>
+        <a href="#portfolio" class="rounded-2xl px-3 py-3 transition hover:bg-white/5">Кейсы</a>
+        <a href="#process" class="rounded-2xl px-3 py-3 transition hover:bg-white/5">Процесс</a>
+        <a href="#cta" class="shine-button mt-2 rounded-2xl px-4 py-3 text-center font-semibold text-black">Оставить заявку</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero-grid noise relative overflow-hidden">
-      <div class="absolute inset-x-0 top-0 h-px bg-section-divider"></div>
-      <div class="floating-ring left-[6%] top-[18%] h-52 w-52"></div>
-      <div class="floating-ring right-[10%] top-[12%] h-64 w-64"></div>
-      <div class="absolute inset-x-0 top-28 mx-auto h-px w-[84%] bg-goldLine opacity-60 blur-[1px]"></div>
-
-      <div class="mx-auto grid max-w-7xl gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:pb-24 lg:pt-20">
+    <section id="hero" class="relative overflow-hidden pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-28">
+      <div class="accent-line absolute inset-x-0 top-0 h-px opacity-90"></div>
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:px-8">
         <div class="relative z-10">
-          <p class="reveal inline-flex rounded-full border border-gold/20 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-gold sm:text-sm">
-            Веб-сайты для бизнеса в Казахстане
-          </p>
+          <div class="reveal brand-chip inline-flex items-center gap-3 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-gold">
+            <span class="inline-flex h-2.5 w-2.5 rounded-full bg-mint"></span>
+            Лендинги для бизнеса в Казахстане
+          </div>
 
-          <h1 class="reveal mt-6 max-w-2xl font-display text-[42px] font-extrabold uppercase leading-[0.9] tracking-[-0.06em] text-white sm:text-[58px] lg:text-[78px]">
-            Сайт за
-            <span class="text-gold">3 дня,</span>
-            который приносит клиентов
+          <h1 class="reveal mt-6 max-w-3xl font-display text-[44px] font-bold leading-[0.9] tracking-[-0.065em] text-white sm:text-[62px] lg:text-[86px]">
+            Сайт, который
+            <span class="text-gold">выглядит дорого</span>
+            и спокойно ведёт к заявке
           </h1>
 
-          <p class="reveal mt-6 max-w-xl text-base leading-8 text-textSoft sm:text-lg">
-            Делаем сайты быстро, без хаоса, затяжек и лишних переплат. Вы получаете сильный первый экран, понятную структуру и страницу, которая помогает брать заявки уже с первых дней.
+          <p class="reveal mt-6 max-w-2xl text-base leading-8 text-mist sm:text-lg">
+            TSM делает лендинги и небольшие сайты с сильным первым экраном, понятной логикой и визуалом, который не похож на шаблон из конструктора. Быстро, аккуратно и с фокусом на реальный отклик.
           </p>
 
           <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#cta" class="gold-button rounded-xl px-7 py-4 text-center text-base font-semibold text-black transition">Получить сайт за 3 дня</a>
-            <a href="#portfolio" class="ghost-button rounded-xl px-7 py-4 text-center text-base font-semibold text-white transition">Смотреть примеры</a>
+            <a href="#cta" class="shine-button rounded-2xl px-7 py-4 text-center text-base font-semibold text-black transition">Получить концепт</a>
+            <a href="#portfolio" class="ghost-button rounded-2xl px-7 py-4 text-center text-base font-semibold text-white transition">Смотреть кейсы</a>
           </div>
 
-          <div class="reveal mt-10 grid grid-cols-2 gap-4 text-sm sm:grid-cols-4">
-            <div class="glass-card rounded-2xl px-4 py-4">
-              <div class="font-semibold text-white">Срок</div>
-              <div class="mt-1 text-textSoft">от 3 дней</div>
+          <div class="reveal mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="signal-card glass rounded-3xl px-5 py-5">
+              <div class="text-sm font-semibold text-white">Запуск</div>
+              <div class="mt-2 text-2xl font-bold text-gold">от 3 дней</div>
+              <div class="mt-2 text-sm leading-6 text-white/60">Без растянутых согласований и пустых созвонов.</div>
             </div>
-            <div class="glass-card rounded-2xl px-4 py-4">
-              <div class="font-semibold text-white">Договор</div>
-              <div class="mt-1 text-textSoft">и гарантия</div>
+            <div class="signal-card glass rounded-3xl px-5 py-5">
+              <div class="text-sm font-semibold text-white">Формат</div>
+              <div class="mt-2 text-2xl font-bold text-white">под ключ</div>
+              <div class="mt-2 text-sm leading-6 text-white/60">Текст, структура, адаптив, форма и публикация.</div>
             </div>
-            <div class="glass-card rounded-2xl px-4 py-4">
-              <div class="font-semibold text-white">Поддержка</div>
-              <div class="mt-1 text-textSoft">и хостинг</div>
-            </div>
-            <div class="glass-card rounded-2xl px-4 py-4">
-              <div class="font-semibold text-white">Оплата</div>
-              <div class="mt-1 text-textSoft">50% предоплата</div>
+            <div class="signal-card glass rounded-3xl px-5 py-5">
+              <div class="text-sm font-semibold text-white">Визуал</div>
+              <div class="mt-2 text-2xl font-bold text-coral">не шаблон</div>
+              <div class="mt-2 text-sm leading-6 text-white/60">Современный ритм, детали и фирменный характер.</div>
             </div>
           </div>
 
-          <div class="reveal mt-8 flex flex-wrap items-center gap-6 text-sm text-white/55">
-            <div>Подходит для стоматологий</div>
-            <div>Автосервисов</div>
-            <div>Юристов</div>
-            <div>Салонов и магазинов</div>
+          <div class="reveal mt-8 flex flex-wrap gap-3 text-sm text-white/58">
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Стоматологии</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Автосервисы</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Юристы</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Салоны и шоурумы</span>
           </div>
         </div>
 
-        <div class="relative flex min-h-[360px] items-center justify-center sm:min-h-[520px] lg:min-h-[620px]">
-          <div class="absolute bottom-10 left-1/2 h-24 w-[78%] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl"></div>
+        <div class="relative flex min-h-[420px] items-center justify-center sm:min-h-[560px] lg:min-h-[640px]">
+          <div class="hero-aura absolute inset-x-10 top-12 h-[70%] rounded-[44px]"></div>
+          <div class="absolute inset-x-6 top-10 h-[78%] rounded-[36px] bg-gradient-to-br from-white/10 to-white/0 blur-3xl"></div>
 
-          <div class="floating-showcase showcase-shadow relative z-10 w-full max-w-[760px]">
-            <div class="rounded-[28px] border border-white/15 bg-[#14161B] p-3 sm:p-4">
-              <div class="rounded-[22px] border border-black/50 bg-[#090A0D] p-3 sm:p-4">
-                <div class="screen-light overflow-hidden rounded-[18px] border border-slate-200">
-                  <div class="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-                    <div class="flex items-center gap-2">
-                      <div class="h-7 w-7 rounded-lg bg-blue"></div>
-                      <div class="text-xs font-semibold text-slate-700">Smile Avenue</div>
+          <div class="floating-showcase hero-card relative z-10 w-full max-w-[780px] rounded-[34px] p-4 sm:p-5">
+            <div class="rounded-[28px] border border-white/10 bg-[#0a1325] p-4 sm:p-5">
+              <div class="device-screen overflow-hidden rounded-[24px] border border-white/50">
+                <div class="flex items-center justify-between border-b border-slate-200/80 px-4 py-3 sm:px-6">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#0c1730]">
+                      <div class="brand-mark scale-[0.56]"><span></span></div>
                     </div>
-                    <div class="hidden gap-5 text-[11px] text-slate-400 sm:flex">
-                      <span>Услуги</span>
-                      <span>Преимущества</span>
-                      <span>Отзывы</span>
-                      <span>Контакты</span>
+                    <div>
+                      <div class="text-sm font-bold text-slate-800">Aster Dental</div>
+                      <div class="text-[11px] uppercase tracking-[0.24em] text-slate-400">premium clinic</div>
+                    </div>
+                  </div>
+                  <div class="hidden items-center gap-5 text-xs text-slate-400 sm:flex">
+                    <span>Услуги</span>
+                    <span>Врачи</span>
+                    <span>Отзывы</span>
+                    <span>Контакты</span>
+                  </div>
+                </div>
+
+                <div class="grid gap-6 p-5 sm:grid-cols-[0.95fr_1.05fr] sm:p-8">
+                  <div>
+                    <div class="inline-flex rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.28em] text-slate-500">
+                      24/7 online booking
+                    </div>
+                    <h2 class="mt-5 max-w-sm text-[32px] font-extrabold leading-[1.02] tracking-[-0.05em] text-slate-800 sm:text-[42px]">
+                      Улыбка, которой
+                      доверяют с первого экрана
+                    </h2>
+                    <p class="mt-4 max-w-sm text-sm leading-7 text-slate-500">
+                      Спокойная премиальная подача, быстрые акценты на врачах, сервисе и записи без перегруза.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3">
+                      <div class="rounded-2xl bg-[#0e1a33] px-4 py-3 text-xs font-semibold text-white">Записаться сегодня</div>
+                      <div class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-slate-700">Прайс и услуги</div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                      <div class="rounded-3xl border border-slate-200 bg-white/75 p-4">
+                        <div class="text-[10px] uppercase tracking-[0.24em] text-slate-400">Запуск</div>
+                        <div class="mt-2 text-2xl font-bold text-slate-800">3 дня</div>
+                      </div>
+                      <div class="rounded-3xl border border-slate-200 bg-white/75 p-4">
+                        <div class="text-[10px] uppercase tracking-[0.24em] text-slate-400">Лиды</div>
+                        <div class="mt-2 text-2xl font-bold text-slate-800">+32%</div>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="grid gap-5 p-5 sm:grid-cols-[0.95fr_1.05fr] sm:p-8">
-                    <div class="pt-2">
-                      <div class="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-400">Стоматология премиум-класса</div>
-                      <h2 class="mt-4 max-w-xs text-[30px] font-extrabold leading-tight text-slate-800 sm:text-[38px]">Современная стоматология для всей семьи</h2>
-                      <p class="mt-4 max-w-xs text-sm leading-6 text-slate-500">Упаковка услуг, блок доверия и запись на приём в один клик прямо с первого экрана.</p>
-
-                      <div class="mt-6 flex flex-wrap gap-3">
-                        <div class="rounded-lg bg-blue px-4 py-2 text-xs font-semibold text-white">Записаться сейчас</div>
-                        <div class="rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700">Прайс услуг</div>
-                      </div>
-
-                      <div class="mt-6 grid grid-cols-2 gap-3">
-                        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4">
-                          <div class="text-[10px] uppercase tracking-[0.22em] text-slate-400">Запуск</div>
-                          <div class="mt-2 text-xl font-bold text-slate-800">3 дня</div>
-                        </div>
-                        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4">
-                          <div class="text-[10px] uppercase tracking-[0.22em] text-slate-400">Лиды</div>
-                          <div class="mt-2 text-xl font-bold text-slate-800">+32%</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="relative min-h-[220px] rounded-[28px] bg-[linear-gradient(145deg,#f6f8fb,#e6ebf3)]">
-                      <div class="absolute left-[10%] top-[12%] h-16 w-16 rounded-full border-[12px] border-slate-300 bg-white/60"></div>
-                      <div class="absolute right-[14%] top-[10%] h-20 w-20 rounded-full bg-white shadow-md"></div>
-                      <div class="absolute bottom-[18%] right-[16%] h-28 w-32 rounded-[34px] bg-[#29497E]"></div>
-                      <div class="absolute bottom-[14%] left-[24%] h-20 w-36 rounded-[26px] bg-slate-300"></div>
-                      <div class="absolute bottom-6 left-1/2 h-16 w-16 -translate-x-1/2 rounded-full bg-slate-200"></div>
-                    </div>
+                  <div class="relative min-h-[280px] overflow-hidden rounded-[32px] bg-[linear-gradient(145deg,#dfe8ff,#f7faff)]">
+                    <div class="absolute left-[10%] top-[14%] h-20 w-20 rounded-full border-[14px] border-white bg-[#d5def7]"></div>
+                    <div class="absolute right-[12%] top-[12%] h-24 w-24 rounded-full bg-white shadow-xl"></div>
+                    <div class="absolute left-[14%] top-[44%] h-24 w-36 rounded-[28px] bg-[#8db3ff]"></div>
+                    <div class="absolute bottom-[16%] right-[14%] h-36 w-40 rounded-[40px] bg-[#19345e]"></div>
+                    <div class="absolute bottom-8 left-[26%] h-20 w-20 rounded-full bg-[#f7fbff] shadow-lg"></div>
+                    <div class="absolute bottom-8 right-[26%] h-12 w-28 rounded-full bg-white/70 blur-sm"></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="mx-auto h-5 w-[88%] rounded-b-[18px] bg-[linear-gradient(180deg,#53545A,#1A1C22)]"></div>
-            <div class="mx-auto h-4 w-[50%] rounded-b-[14px] bg-[linear-gradient(180deg,#2E3139,#0B0C10)]"></div>
+            <div class="mx-auto h-5 w-[88%] rounded-b-[16px] bg-[linear-gradient(180deg,#44506f,#182035)]"></div>
+            <div class="mx-auto h-4 w-[50%] rounded-b-[12px] bg-[linear-gradient(180deg,#202b45,#0c1220)]"></div>
           </div>
 
-          <div class="floating-phone showcase-shadow absolute bottom-8 right-0 z-20 w-[118px] sm:right-8 sm:w-[180px]">
-            <div class="rounded-[28px] border border-white/20 bg-[#121418] p-2.5">
-              <div class="rounded-[22px] bg-black p-1.5">
-                <div class="screen-light overflow-hidden rounded-[18px] border border-slate-200">
-                  <div class="mx-auto mt-2 h-1.5 w-10 rounded-full bg-slate-300"></div>
-                  <div class="px-3 pb-4 pt-4">
-                    <div class="text-[8px] font-semibold uppercase tracking-[0.22em] text-slate-400">Стоматология</div>
-                    <div class="mt-2 text-sm font-extrabold leading-tight text-slate-800">Современная клиника без долгого ожидания</div>
-                    <div class="mt-3 h-20 rounded-[16px] bg-[linear-gradient(145deg,#edf1f7,#dfe5ef)]"></div>
-                    <div class="mt-3 rounded-lg bg-blue px-3 py-2 text-center text-[10px] font-semibold text-white">Записаться</div>
+          <div class="floating-phone absolute bottom-6 right-0 z-20 w-[132px] sm:right-8 sm:w-[188px]">
+            <div class="rounded-[34px] border border-white/15 bg-[#0c1324] p-2.5 shadow-soft">
+              <div class="rounded-[28px] bg-black p-1.5">
+                <div class="device-screen overflow-hidden rounded-[24px] border border-white/50">
+                  <div class="mx-auto mt-2 h-1.5 w-12 rounded-full bg-slate-300"></div>
+                  <div class="px-4 pb-5 pt-4">
+                    <div class="text-[9px] font-semibold uppercase tracking-[0.22em] text-slate-400">мобильная версия</div>
+                    <div class="mt-2 text-sm font-extrabold leading-tight text-slate-800">Клиника без долгого ожидания и лишней тревоги</div>
+                    <div class="mt-3 h-24 rounded-[18px] bg-[linear-gradient(145deg,#e7eefc,#d8e3ff)]"></div>
+                    <div class="mt-3 rounded-2xl bg-[#0e1a33] px-3 py-3 text-center text-[10px] font-semibold text-white">Записаться</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="absolute left-0 top-[15%] hidden rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 shadow-dark lg:block">
-            Заявка через 14 минут
+          <div class="absolute left-0 top-[18%] hidden rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 shadow-soft lg:block">
+            Новый лид через 14 минут
           </div>
         </div>
       </div>
     </section>
 
-    <section class="border-y border-white/8 bg-white/[0.02] py-5">
-      <div class="mx-auto grid max-w-7xl gap-4 px-4 text-center sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div class="reveal rounded-2xl border border-white/8 bg-white/5 px-5 py-5">
-          <div class="text-2xl font-extrabold text-white">3 дня</div>
-          <div class="mt-2 text-sm text-textSoft">Средний запуск от брифа до публикации</div>
+    <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div class="glass grid gap-4 rounded-[32px] p-5 sm:grid-cols-2 lg:grid-cols-4 lg:p-6">
+        <div class="reveal rounded-[24px] border border-white/8 bg-white/5 px-5 py-5">
+          <div class="text-3xl font-bold text-white">3 дня</div>
+          <div class="mt-2 text-sm leading-6 text-white/62">Средний срок на сильный лендинг без лишней суеты.</div>
         </div>
-        <div class="reveal rounded-2xl border border-white/8 bg-white/5 px-5 py-5">
-          <div class="text-2xl font-extrabold text-white">1 команда</div>
-          <div class="mt-2 text-sm text-textSoft">Дизайн, тексты, вёрстка и настройка</div>
+        <div class="reveal rounded-[24px] border border-white/8 bg-white/5 px-5 py-5">
+          <div class="text-3xl font-bold text-white">1 команда</div>
+          <div class="mt-2 text-sm leading-6 text-white/62">Структура, дизайн, тексты, адаптив и публикация.</div>
         </div>
-        <div class="reveal rounded-2xl border border-white/8 bg-white/5 px-5 py-5">
-          <div class="text-2xl font-extrabold text-white">KZ focus</div>
-          <div class="mt-2 text-sm text-textSoft">Под нишу и поведение клиентов в Казахстане</div>
+        <div class="reveal rounded-[24px] border border-white/8 bg-white/5 px-5 py-5">
+          <div class="text-3xl font-bold text-white">KZ focus</div>
+          <div class="mt-2 text-sm leading-6 text-white/62">Под местный рынок, привычки клиентов и понятный тон.</div>
         </div>
-        <div class="reveal rounded-2xl border border-white/8 bg-white/5 px-5 py-5">
-          <div class="text-2xl font-extrabold text-white">Под ключ</div>
-          <div class="mt-2 text-sm text-textSoft">Форма, структура, хостинг и запуск без суеты</div>
+        <div class="reveal rounded-[24px] border border-white/8 bg-white/5 px-5 py-5">
+          <div class="text-3xl font-bold text-white">+ стиль</div>
+          <div class="mt-2 text-sm leading-6 text-white/62">Логотип, акценты и визуальный язык без ощущения шаблона.</div>
         </div>
       </div>
     </section>
 
-    <section id="packages" class="section-light py-16 text-black sm:py-20">
+    <section id="services" class="section-light py-16 sm:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="reveal text-sm font-semibold uppercase tracking-[0.28em] text-goldDeep">Пакеты услуг</p>
-          <h2 class="reveal mt-4 font-display text-4xl font-extrabold uppercase leading-tight tracking-[-0.05em] text-[#111318] sm:text-5xl">Простые цены и понятный результат</h2>
-          <p class="reveal mt-4 text-base leading-8 text-[#626977] sm:text-lg">Без непредсказуемой сметы. Каждый пакет уже включает сильную структуру, адаптив, аккуратную сборку и запуск.</p>
+          <p class="reveal text-sm font-semibold uppercase tracking-[0.3em] text-[#d46a33]">Услуги и пакеты</p>
+          <h2 class="reveal mt-4 font-display text-4xl font-bold leading-[0.95] tracking-[-0.05em] text-[#0b1020] sm:text-5xl">
+            Собираем лендинг так, чтобы он был
+            современным и убедительным
+          </h2>
+          <p class="reveal mt-5 text-base leading-8 text-[#55617f] sm:text-lg">
+            Не просто красивая обложка. Мы упаковываем оффер, выстраиваем путь до заявки и делаем страницу, которую приятно показать клиенту, партнёру и команде.
+          </p>
         </div>
 
         <div class="mt-12 grid gap-6 lg:grid-cols-3">
-          <article class="reveal tilt-card rounded-[28px] border border-[#E6E8ED] bg-white p-7 shadow-card">
-            <div class="text-center">
-              <div class="text-2xl font-extrabold uppercase text-[#111318]">Базовый</div>
-              <p class="mt-2 text-sm text-[#68707F]">Лендинг для быстрого старта</p>
-              <div class="mt-6 text-4xl font-extrabold text-[#111318]">80 000 ₸</div>
+          <article class="price-card reveal rounded-[30px] border border-[#dbe3f6] bg-white p-7 shadow-[0_24px_80px_rgba(11,16,32,0.08)]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="font-display text-2xl font-bold text-[#0b1020]">Start</div>
+                <p class="mt-2 text-sm leading-6 text-[#64708d]">Лендинг для быстрого и чистого запуска.</p>
+              </div>
+              <div class="rounded-2xl surface-light px-3 py-2 text-xs font-bold uppercase tracking-[0.24em] text-[#42506e]">Lite</div>
             </div>
-            <ul class="mt-8 space-y-3 text-sm text-[#2B3240]">
-              <li>Одностраничный сайт до 7 блоков</li>
-              <li>Форма заявки и кнопка WhatsApp</li>
-              <li>Адаптив под телефон и планшет</li>
-              <li>Базовая SEO-структура</li>
+            <div class="mt-6 text-4xl font-extrabold text-[#0b1020]">80 000 тг</div>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-[#1f2a44]">
+              <li>Лендинг до 7 смысловых блоков</li>
+              <li>Структура, тексты и адаптив</li>
+              <li>Форма заявки и WhatsApp-кнопка</li>
+              <li>Современный hero и быстрая публикация</li>
             </ul>
-            <a href="#cta" class="gold-button mt-8 block rounded-xl px-5 py-3 text-center text-sm font-semibold text-black transition">Заказать</a>
+            <a href="#cta" class="mt-8 inline-flex rounded-2xl bg-[#0d1830] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#132242]">Выбрать пакет</a>
           </article>
 
-          <article class="reveal tilt-card relative rounded-[28px] border-2 border-gold bg-[#111318] p-7 text-white shadow-glow">
-            <div class="absolute right-5 top-5 rounded-lg bg-gold px-3 py-1 text-xs font-bold uppercase text-black">Хит</div>
-            <div class="text-center">
-              <div class="text-2xl font-extrabold uppercase">Оптимум</div>
-              <p class="mt-2 text-sm text-white/62">Лучший вариант для роста</p>
-              <div class="mt-6 text-4xl font-extrabold">150 000 ₸</div>
+          <article class="price-card reveal rounded-[30px] border border-[#ffcf7d] bg-[#0b1020] p-7 text-white shadow-glow">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="font-display text-2xl font-bold">Growth</div>
+                <p class="mt-2 text-sm leading-6 text-white/65">Лучший вариант, если нужен вау-эффект и заявки.</p>
+              </div>
+              <div class="rounded-2xl bg-gold px-3 py-2 text-xs font-bold uppercase tracking-[0.24em] text-black">Хит</div>
             </div>
-            <ul class="mt-8 space-y-3 text-sm text-white/88">
-              <li>Сайт до 5 страниц или усиленный лендинг</li>
-              <li>Индивидуальная структура под нишу</li>
-              <li>Продающие тексты и усиленный hero</li>
-              <li>Подключение аналитики и лид-форм</li>
-              <li>Поддержка после запуска</li>
+            <div class="mt-6 text-4xl font-extrabold text-white">150 000 тг</div>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-white/84">
+              <li>Усиленный лендинг или сайт до 5 страниц</li>
+              <li>Индивидуальная композиция и сильный визуал</li>
+              <li>Фирменные акценты и мини-логотип</li>
+              <li>Анимации, формы, аналитика и поддержка после запуска</li>
             </ul>
-            <a href="#cta" class="gold-button mt-8 block rounded-xl px-5 py-3 text-center text-sm font-semibold text-black transition">Получить сайт</a>
+            <a href="#cta" class="shine-button mt-8 inline-flex rounded-2xl px-5 py-3.5 text-sm font-semibold text-black transition">Получить этот формат</a>
           </article>
 
-          <article class="reveal tilt-card rounded-[28px] border border-[#E6E8ED] bg-white p-7 shadow-card">
-            <div class="text-center">
-              <div class="text-2xl font-extrabold uppercase text-[#111318]">VIP</div>
-              <p class="mt-2 text-sm text-[#68707F]">Максимум для сильного бренда</p>
-              <div class="mt-6 text-4xl font-extrabold text-[#111318]">300 000 ₸</div>
+          <article class="price-card reveal rounded-[30px] border border-[#dbe3f6] bg-white p-7 shadow-[0_24px_80px_rgba(11,16,32,0.08)]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="font-display text-2xl font-bold text-[#0b1020]">Signature</div>
+                <p class="mt-2 text-sm leading-6 text-[#64708d]">Когда нужен более сильный брендовый уровень.</p>
+              </div>
+              <div class="rounded-2xl bg-[linear-gradient(135deg,#fff4e8,#eef2ff)] px-3 py-2 text-xs font-bold uppercase tracking-[0.24em] text-[#bc6d24]">Pro</div>
             </div>
-            <ul class="mt-8 space-y-3 text-sm text-[#2B3240]">
+            <div class="mt-6 text-4xl font-extrabold text-[#0b1020]">300 000 тг</div>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-[#1f2a44]">
               <li>Многостраничный сайт под ключ</li>
-              <li>Более сложная логика и квизы</li>
-              <li>Дополнительные секции доверия и кейсов</li>
-              <li>Приоритетная поддержка и развитие</li>
+              <li>Расширенная подача кейсов и доверия</li>
+              <li>Логотип, визуальная система и отдельные секции бренда</li>
+              <li>Приоритетная поддержка и развитие проекта</li>
             </ul>
-            <a href="#cta" class="gold-button mt-8 block rounded-xl px-5 py-3 text-center text-sm font-semibold text-black transition">Обсудить</a>
+            <a href="#cta" class="mt-8 inline-flex rounded-2xl bg-[#0d1830] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#132242]">Обсудить проект</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="bg-[#F3F5F8] py-16 text-black sm:py-20">
+    <section id="portfolio" class="section-light bg-[#edf3ff] py-16 sm:py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div class="max-w-3xl">
-            <p class="reveal text-sm font-semibold uppercase tracking-[0.28em] text-goldDeep">Кейсы</p>
-            <h2 class="reveal mt-4 font-display text-4xl font-extrabold uppercase leading-tight tracking-[-0.05em] text-[#111318] sm:text-5xl">Примеры сайтов, которые выглядят дороже рынка</h2>
+            <p class="reveal text-sm font-semibold uppercase tracking-[0.3em] text-[#d46a33]">Кейсы</p>
+            <h2 class="reveal mt-4 font-display text-4xl font-bold leading-[0.96] tracking-[-0.05em] text-[#0b1020] sm:text-5xl">
+              Примеры подачи, которая ощущается дороже рынка
+            </h2>
           </div>
-          <p class="reveal max-w-2xl text-base leading-8 text-[#626977] sm:text-lg">Собираем страницу так, чтобы человек быстро понял оффер, увидел уровень и не терялся на пути к заявке.</p>
+          <p class="reveal max-w-2xl text-base leading-8 text-[#55617f] sm:text-lg">
+            Мы собираем лендинг не только про блоки, а про настроение, доверие и уверенное ощущение бренда с первой секунды.
+          </p>
         </div>
 
         <div class="mt-12 grid gap-6 lg:grid-cols-3">
-          <article class="reveal rounded-[26px] border border-[#E6E8ED] bg-white p-4 shadow-card">
-            <div class="screen-light rounded-[22px] border border-slate-200 p-5">
-              <div class="rounded-[18px] border border-slate-200 bg-white p-5">
+          <article class="case-card reveal rounded-[28px] border border-[#dbe3f6] bg-white p-4 shadow-[0_20px_70px_rgba(11,16,32,0.08)]">
+            <div class="rounded-[24px] border border-slate-200 bg-[linear-gradient(180deg,#fbfdff,#edf4ff)] p-5">
+              <div class="rounded-[20px] border border-slate-200 bg-white p-5">
                 <div class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Стоматология</div>
-                <h3 class="mt-3 text-[28px] font-extrabold leading-tight text-slate-800">Современная стоматология для всей семьи</h3>
-                <p class="mt-3 text-sm leading-7 text-slate-500">Спокойная премиальная подача, быстрое доверие и акцент на записи.</p>
-                <div class="mt-5 h-36 rounded-[18px] bg-[linear-gradient(145deg,#F2F5FA,#E2E8F1)]"></div>
-                <div class="mt-5 inline-flex rounded-lg bg-blue px-4 py-2 text-xs font-semibold text-white">Запись на приём</div>
+                <h3 class="mt-3 text-[30px] font-extrabold leading-[1.04] tracking-[-0.04em] text-slate-800">Премиальная клиника для семьи и бизнеса</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-500">Чистый визуал, акцент на врачах и спокойная запись без лишних тревожных деталей.</p>
+                <div class="mt-5 h-36 rounded-[20px] bg-[linear-gradient(145deg,#f3f7ff,#dbe7ff)]"></div>
+                <div class="mt-5 inline-flex rounded-2xl bg-[#0d1830] px-4 py-2.5 text-xs font-semibold text-white">Запись на прием</div>
               </div>
-            </div>
-            <div class="flex items-center justify-between px-2 pb-1 pt-5">
-              <div>
-                <div class="font-semibold text-[#111318]">Медицинские услуги</div>
-                <div class="mt-1 text-sm text-[#68707F]">Доверие, экспертиза, запись</div>
-              </div>
-              <a href="#cta" class="text-sm font-semibold text-[#244D9B]">Смотреть</a>
             </div>
           </article>
 
-          <article class="reveal rounded-[26px] border border-[#E6E8ED] bg-white p-4 shadow-card">
-            <div class="screen-dark rounded-[22px] border border-black/10 p-5">
-              <div class="rounded-[18px] border border-white/10 bg-black/15 p-5">
-                <div class="text-xs font-semibold uppercase tracking-[0.24em] text-gold/80">Автосервис</div>
-                <h3 class="mt-3 max-w-[240px] text-[28px] font-extrabold leading-tight text-white">Надёжный автосервис рядом с вами</h3>
-                <p class="mt-3 text-sm leading-7 text-white/60">Акцент на скорость, понятные услуги и быстрый путь к записи.</p>
-                <div class="mt-5 h-36 rounded-[18px] bg-[linear-gradient(145deg,#202227,#0F1013)]"></div>
-                <div class="mt-5 inline-flex rounded-lg bg-gold px-4 py-2 text-xs font-semibold text-black">Записаться</div>
+          <article class="case-card reveal rounded-[28px] border border-[#dbe3f6] bg-white p-4 shadow-[0_20px_70px_rgba(11,16,32,0.08)]">
+            <div class="rounded-[24px] border border-[#15213e] bg-[linear-gradient(180deg,#13203c,#09101d)] p-5">
+              <div class="rounded-[20px] border border-white/10 bg-white/5 p-5">
+                <div class="text-xs font-semibold uppercase tracking-[0.24em] text-gold/85">Автосервис</div>
+                <h3 class="mt-3 text-[30px] font-extrabold leading-[1.04] tracking-[-0.04em] text-white">Сервис, которому легко доверить машину</h3>
+                <p class="mt-3 text-sm leading-7 text-white/62">Плотный темный стиль, ясные преимущества и путь к быстрой записи.</p>
+                <div class="mt-5 h-36 rounded-[20px] bg-[linear-gradient(145deg,#1f3158,#0a1325)]"></div>
+                <div class="mt-5 inline-flex rounded-2xl bg-gold px-4 py-2.5 text-xs font-semibold text-black">Записаться</div>
               </div>
-            </div>
-            <div class="flex items-center justify-between px-2 pb-1 pt-5">
-              <div>
-                <div class="font-semibold text-[#111318]">Автоуслуги</div>
-                <div class="mt-1 text-sm text-[#68707F]">Оффер, доверие, локальная заявка</div>
-              </div>
-              <a href="#cta" class="text-sm font-semibold text-[#244D9B]">Смотреть</a>
             </div>
           </article>
 
-          <article class="reveal rounded-[26px] border border-[#E6E8ED] bg-white p-4 shadow-card">
-            <div class="rounded-[22px] border border-[#DADDE3] bg-[linear-gradient(180deg,#72757E,#4F525B)] p-5">
-              <div class="rounded-[18px] border border-white/10 bg-black/10 p-5">
-                <div class="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">Юристы</div>
-                <h3 class="mt-3 max-w-[250px] text-[28px] font-extrabold leading-tight text-white">Юридические услуги для бизнеса и частных лиц</h3>
-                <p class="mt-3 text-sm leading-7 text-white/65">Статусная подача, экспертность и понятный призыв на консультацию.</p>
-                <div class="mt-5 h-36 rounded-[18px] bg-[linear-gradient(145deg,#7B7F87,#5B5F69)]"></div>
-                <div class="mt-5 inline-flex rounded-lg border border-white/20 px-4 py-2 text-xs font-semibold text-white">Получить консультацию</div>
+          <article class="case-card reveal rounded-[28px] border border-[#dbe3f6] bg-white p-4 shadow-[0_20px_70px_rgba(11,16,32,0.08)]">
+            <div class="rounded-[24px] border border-[#d8dbe4] bg-[linear-gradient(180deg,#737987,#5d6475)] p-5">
+              <div class="rounded-[20px] border border-white/10 bg-black/10 p-5">
+                <div class="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">Юридические услуги</div>
+                <h3 class="mt-3 text-[30px] font-extrabold leading-[1.04] tracking-[-0.04em] text-white">Статусная подача для консультаций и сделок</h3>
+                <p class="mt-3 text-sm leading-7 text-white/68">Сдержанный тон, ясная экспертиза и ощущение контроля в каждом блоке.</p>
+                <div class="mt-5 h-36 rounded-[20px] bg-[linear-gradient(145deg,#868c98,#666d7d)]"></div>
+                <div class="mt-5 inline-flex rounded-2xl border border-white/20 px-4 py-2.5 text-xs font-semibold text-white">Получить консультацию</div>
               </div>
-            </div>
-            <div class="flex items-center justify-between px-2 pb-1 pt-5">
-              <div>
-                <div class="font-semibold text-[#111318]">Юридическая практика</div>
-                <div class="mt-1 text-sm text-[#68707F]">Статус, доверие, заявки</div>
-              </div>
-              <a href="#cta" class="text-sm font-semibold text-[#244D9B]">Смотреть</a>
             </div>
           </article>
         </div>
@@ -490,113 +562,132 @@
     </section>
 
     <section id="process" class="relative overflow-hidden py-16 sm:py-20">
-      <div class="absolute inset-0 bg-[linear-gradient(180deg,#0B0D12,#090A0D)]"></div>
-      <div class="absolute inset-x-0 top-0 h-px bg-section-divider"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,#0a1020,#0b1224)]"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="reveal text-sm font-semibold uppercase tracking-[0.28em] text-gold">Как мы работаем</p>
-          <h2 class="reveal mt-4 font-display text-4xl font-extrabold uppercase leading-tight tracking-[-0.05em] sm:text-5xl">Простой процесс без лишней путаницы</h2>
-          <p class="reveal mt-4 text-base leading-8 text-textSoft sm:text-lg">От заявки до запуска мы ведём проект сами. У тебя есть понятный процесс, быстрый отклик и ясный результат по срокам.</p>
+          <p class="reveal text-sm font-semibold uppercase tracking-[0.3em] text-gold">Как мы работаем</p>
+          <h2 class="reveal mt-4 font-display text-4xl font-bold leading-[0.96] tracking-[-0.05em] text-white sm:text-5xl">
+            Понятный процесс без долгого хаоса
+          </h2>
+          <p class="reveal mt-5 text-base leading-8 text-white/64 sm:text-lg">
+            Вы не управляете десятью подрядчиками. Мы ведем проект компактно, быстро и держим фокус на результате, а не на бесконечных обсуждениях.
+          </p>
         </div>
 
-        <div class="mt-12 grid gap-5 lg:grid-cols-5">
-          <div class="reveal rounded-[24px] border border-white/10 bg-white/5 px-5 py-6 text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-black">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72l.34 2.29a2 2 0 0 1-.57 1.69l-1.3 1.3a16 16 0 0 0 6.47 6.47l1.3-1.3a2 2 0 0 1 1.69-.57l2.29.34A2 2 0 0 1 22 16.92Z"/></svg>
+        <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          <div class="step-card reveal glass rounded-[28px] px-5 py-6">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold text-black">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.86 19.86 0 0 1 2.08 4.09 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72l.34 2.29a2 2 0 0 1-.57 1.69l-1.3 1.3a16 16 0 0 0 6.47 6.47l1.3-1.3a2 2 0 0 1 1.69-.57l2.29.34A2 2 0 0 1 22 16.92Z"/></svg>
             </div>
-            <div class="mt-5 text-lg font-bold">1. Заявка</div>
-            <p class="mt-2 text-sm leading-6 text-white/65">Оставляешь контакты и кратко описываешь задачу.</p>
+            <div class="mt-5 text-xl font-bold text-white">1. Бриф</div>
+            <p class="mt-2 text-sm leading-7 text-white/62">Понимаем нишу, оффер, цель страницы и желаемый характер бренда.</p>
           </div>
-          <div class="reveal rounded-[24px] border border-white/10 bg-white/5 px-5 py-6 text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-black">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/></svg>
+
+          <div class="step-card reveal glass rounded-[28px] px-5 py-6">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-coral text-black">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/></svg>
             </div>
-            <div class="mt-5 text-lg font-bold">2. Обсуждение</div>
-            <p class="mt-2 text-sm leading-6 text-white/65">Уточняем нишу, оффер, структуру и старт проекта.</p>
+            <div class="mt-5 text-xl font-bold text-white">2. Концепт</div>
+            <p class="mt-2 text-sm leading-7 text-white/62">Собираем структуру, тексты и визуальное направление страницы.</p>
           </div>
-          <div class="reveal rounded-[24px] border border-white/10 bg-white/5 px-5 py-6 text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-black">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+
+          <div class="step-card reveal glass rounded-[28px] px-5 py-6">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky text-black">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
             </div>
-            <div class="mt-5 text-lg font-bold">3. Дизайн и сборка</div>
-            <p class="mt-2 text-sm leading-6 text-white/65">Собираем визуал, тексты, адаптив и интерактив.</p>
+            <div class="mt-5 text-xl font-bold text-white">3. Дизайн</div>
+            <p class="mt-2 text-sm leading-7 text-white/62">Делаем сильный hero, адаптив и аккуратные анимации без перегруза.</p>
           </div>
-          <div class="reveal rounded-[24px] border border-white/10 bg-white/5 px-5 py-6 text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-black">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+
+          <div class="step-card reveal glass rounded-[28px] px-5 py-6">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-mint text-black">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
-            <div class="mt-5 text-lg font-bold">4. Сдача</div>
-            <p class="mt-2 text-sm leading-6 text-white/65">Показываем результат, дорабатываем и полируем детали.</p>
+            <div class="mt-5 text-xl font-bold text-white">4. Полировка</div>
+            <p class="mt-2 text-sm leading-7 text-white/62">Дошлифовываем детали, формы, контрасты и мобильную версию.</p>
           </div>
-          <div class="reveal rounded-[24px] border border-white/10 bg-white/5 px-5 py-6 text-center">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-black">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.5 16.5 3 21l4.5-1.5L19 8a2.1 2.1 0 0 0-3-3Z"/><path d="m13.5 5.5 5 5"/></svg>
+
+          <div class="step-card reveal glass rounded-[28px] px-5 py-6">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-black">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.5 16.5 3 21l4.5-1.5L19 8a2.1 2.1 0 0 0-3-3Z"/><path d="m13.5 5.5 5 5"/></svg>
             </div>
-            <div class="mt-5 text-lg font-bold">5. Запуск</div>
-            <p class="mt-2 text-sm leading-6 text-white/65">Подключаем домен, публикуем и остаёмся на связи.</p>
+            <div class="mt-5 text-xl font-bold text-white">5. Запуск</div>
+            <p class="mt-2 text-sm leading-7 text-white/62">Публикуем сайт и остаемся рядом, если нужно развивать дальше.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cta" class="section-light py-16 text-black sm:py-20">
-      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-        <div class="reveal rounded-[30px] bg-[#0F1218] px-6 py-8 text-white shadow-dark sm:px-10 sm:py-10">
-          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Оставить заявку</p>
-          <h2 class="mt-4 max-w-lg font-display text-4xl font-extrabold uppercase leading-[1] tracking-[-0.05em] sm:text-5xl">
-            Получите сайт для бизнеса уже за 3 дня
+    <section id="cta" class="section-light py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
+        <div class="reveal rounded-[34px] bg-[#0b1020] px-6 py-8 text-white shadow-soft sm:px-10 sm:py-10">
+          <div class="flex items-center gap-4">
+            <div class="brand-mark"><span></span></div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.28em] text-gold">Оставить заявку</p>
+              <div class="mt-1 text-sm text-white/55">TSM / modern launch studio</div>
+            </div>
+          </div>
+
+          <h2 class="mt-6 max-w-lg font-display text-4xl font-bold leading-[0.96] tracking-[-0.05em] sm:text-5xl">
+            Сделаем лендинг, который выглядит бодро и работает на доверие
           </h2>
-          <p class="mt-5 max-w-xl text-base leading-8 text-textSoft sm:text-lg">
-            Оставьте имя и телефон. Мы быстро свяжемся, подберём подходящий пакет и скажем, как лучше упаковать именно вашу нишу, чтобы сайт выглядел сильно и конвертил в заявки.
+          <p class="mt-5 max-w-xl text-base leading-8 text-white/64 sm:text-lg">
+            Оставьте имя и телефон. Мы быстро свяжемся, подскажем лучший формат и скажем, как упаковать именно ваш продукт или услугу без лишней декоративности.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-4 text-sm text-white/75">
+          <div class="mt-8 flex flex-wrap gap-3 text-sm text-white/72">
             <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Ответ в течение дня</div>
             <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Понятная смета</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Запуск без затяжек</div>
+            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2">Современный визуал</div>
           </div>
         </div>
 
-        <div class="reveal rounded-[30px] border border-[#E6E8ED] bg-white p-6 shadow-card sm:p-8">
+        <div class="reveal rounded-[34px] border border-[#dbe3f6] bg-white p-6 shadow-[0_24px_80px_rgba(11,16,32,0.08)] sm:p-8">
           <div class="text-center">
-            <h3 class="font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-[#111318]">Оставьте заявку</h3>
-            <p class="mt-2 text-sm text-[#68707F]">Мы свяжемся и подскажем лучший формат запуска.</p>
+            <h3 class="font-display text-3xl font-bold tracking-[-0.04em] text-[#0b1020]">Обсудить проект</h3>
+            <p class="mt-2 text-sm leading-6 text-[#687590]">Подскажем по структуре, сроку и стилю страницы под вашу нишу.</p>
           </div>
 
           <form id="lead-form" class="mt-6 space-y-4">
             <label class="block">
-              <span class="mb-2 block text-sm font-medium text-[#2B3240]">Ваше имя</span>
-              <input id="name-input" type="text" name="name" placeholder="Например, Ержан" class="input-field w-full rounded-xl border border-[#DDE1E7] bg-[#F8F9FB] px-4 py-3.5 text-[#111318] outline-none transition">
+              <span class="mb-2 block text-sm font-medium text-[#22304c]">Ваше имя</span>
+              <input id="name-input" type="text" name="name" placeholder="Например, Ержан" class="input-field w-full rounded-2xl border border-[#d8dfef] bg-[#f7faff] px-4 py-3.5 text-[#0b1020] outline-none transition">
             </label>
 
             <label class="block">
-              <span class="mb-2 block text-sm font-medium text-[#2B3240]">Телефон</span>
-              <input id="phone-input" type="tel" name="phone" placeholder="+7 (___) ___ __ __" class="input-field w-full rounded-xl border border-[#DDE1E7] bg-[#F8F9FB] px-4 py-3.5 text-[#111318] outline-none transition">
+              <span class="mb-2 block text-sm font-medium text-[#22304c]">Телефон</span>
+              <input id="phone-input" type="tel" name="phone" placeholder="+7 (___) ___ __ __" class="input-field w-full rounded-2xl border border-[#d8dfef] bg-[#f7faff] px-4 py-3.5 text-[#0b1020] outline-none transition">
             </label>
 
-            <button type="submit" class="gold-button w-full rounded-xl px-5 py-4 text-base font-semibold text-black transition">Получить сайт</button>
-            <p id="form-feedback" class="hidden rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></p>
-            <p class="text-center text-xs leading-5 text-[#7A8190]">Нажимая кнопку, вы соглашаетесь на обработку данных для связи по проекту.</p>
+            <button type="submit" class="shine-button w-full rounded-2xl px-5 py-4 text-base font-semibold text-black transition">Получить консультацию</button>
+            <p id="form-feedback" class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></p>
+            <p class="text-center text-xs leading-5 text-[#7b88a3]">Нажимая кнопку, вы соглашаетесь на обработку данных для связи по проекту.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 bg-[#090B0E] py-10 text-white" id="footer">
+  <footer class="border-t border-white/10 bg-[#08101f] py-10 text-white">
     <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr] lg:px-8">
       <div>
-        <div class="font-display text-[34px] font-extrabold leading-none tracking-[-0.08em]">TSM</div>
-        <div class="mt-1 text-[10px] uppercase tracking-[0.28em] text-white/50">Trend Site Master</div>
-        <p class="mt-5 max-w-xs text-sm leading-7 text-white/60">Создаём сайты, которые помогают бизнесу выглядеть сильнее рынка и получать заявки без лишнего шума.</p>
+        <div class="flex items-center gap-3">
+          <div class="brand-mark"><span></span></div>
+          <div>
+            <div class="font-display text-2xl font-bold tracking-[-0.04em]">TSM</div>
+            <div class="text-[10px] uppercase tracking-[0.3em] text-white/50">trend site master</div>
+          </div>
+        </div>
+        <p class="mt-5 max-w-xs text-sm leading-7 text-white/60">Создаем лендинги и сайты, которые выглядят сильнее шаблонных решений и помогают бизнесу получать заявки без визуального шума.</p>
       </div>
 
       <div>
         <div class="text-sm font-bold uppercase tracking-[0.18em] text-white">Услуги</div>
         <div class="mt-4 space-y-3 text-sm text-white/60">
-          <a href="#packages" class="block transition hover:text-white">Разработка сайтов</a>
-          <a href="#packages" class="block transition hover:text-white">Лендинги</a>
-          <a href="#portfolio" class="block transition hover:text-white">Дизайн кейсов</a>
+          <a href="#services" class="block transition hover:text-white">Разработка лендингов</a>
+          <a href="#services" class="block transition hover:text-white">Сайты под ключ</a>
+          <a href="#portfolio" class="block transition hover:text-white">Кейсы и стиль</a>
           <a href="#cta" class="block transition hover:text-white">Поддержка</a>
         </div>
       </div>
@@ -631,137 +722,104 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    const form = document.getElementById("lead-form");
+    const nameInput = document.getElementById("name-input");
+    const phoneInput = document.getElementById("phone-input");
+    const feedback = document.getElementById("form-feedback");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    const form = document.getElementById('lead-form');
-    const nameInput = document.getElementById('name-input');
-    const phoneInput = document.getElementById('phone-input');
-    const feedback = document.getElementById('form-feedback');
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
     });
 
     mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
       });
     });
 
-    phoneInput.addEventListener('input', (event) => {
-      const digits = event.target.value.replace(/\D/g, '').slice(0, 11);
-      let formatted = '+7';
+    phoneInput.addEventListener("input", (event) => {
+      const digits = event.target.value.replace(/\D/g, "").slice(0, 11);
+      let formatted = "+7";
 
-      if (digits.length > 1) formatted += ' (' + digits.slice(1, 4);
-      if (digits.length >= 4) formatted += ') ' + digits.slice(4, 7);
-      if (digits.length >= 7) formatted += ' ' + digits.slice(7, 9);
-      if (digits.length >= 9) formatted += ' ' + digits.slice(9, 11);
+      if (digits.length > 1) formatted += " (" + digits.slice(1, 4);
+      if (digits.length >= 4) formatted += ") " + digits.slice(4, 7);
+      if (digits.length >= 7) formatted += " " + digits.slice(7, 9);
+      if (digits.length >= 9) formatted += " " + digits.slice(9, 11);
 
       event.target.value = formatted;
     });
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const name = nameInput.value.trim();
-      const phoneDigits = phoneInput.value.replace(/\D/g, '');
+      const phoneDigits = phoneInput.value.replace(/\D/g, "");
 
       if (name.length < 2) {
-        feedback.textContent = 'Введите имя, чтобы мы могли обратиться к вам корректно.';
-        feedback.classList.remove('hidden');
-        feedback.classList.remove('border-emerald-200', 'bg-emerald-50', 'text-emerald-700');
-        feedback.classList.add('border-red-200', 'bg-red-50', 'text-red-700');
+        feedback.textContent = "Введите имя, чтобы мы могли обратиться к вам корректно.";
+        feedback.classList.remove("hidden");
+        feedback.classList.remove("border-emerald-200", "bg-emerald-50", "text-emerald-700");
+        feedback.classList.add("border-red-200", "bg-red-50", "text-red-700");
         nameInput.focus();
         return;
       }
 
       if (phoneDigits.length < 11) {
-        feedback.textContent = 'Введите номер телефона полностью, чтобы мы могли быстро связаться.';
-        feedback.classList.remove('hidden');
-        feedback.classList.remove('border-emerald-200', 'bg-emerald-50', 'text-emerald-700');
-        feedback.classList.add('border-red-200', 'bg-red-50', 'text-red-700');
+        feedback.textContent = "Введите номер телефона полностью, чтобы мы могли быстро связаться.";
+        feedback.classList.remove("hidden");
+        feedback.classList.remove("border-emerald-200", "bg-emerald-50", "text-emerald-700");
+        feedback.classList.add("border-red-200", "bg-red-50", "text-red-700");
         phoneInput.focus();
         return;
       }
 
-      feedback.textContent = 'Заявка принята. Дальше можно подключить Telegram, WhatsApp или CRM для реальной отправки лидов.';
-      feedback.classList.remove('hidden');
-      feedback.classList.remove('border-red-200', 'bg-red-50', 'text-red-700');
-      feedback.classList.add('border-emerald-200', 'bg-emerald-50', 'text-emerald-700');
+      feedback.textContent = "Заявка принята. Дальше можно подключить Telegram, WhatsApp или CRM для реальной отправки лидов.";
+      feedback.classList.remove("hidden");
+      feedback.classList.remove("border-red-200", "bg-red-50", "text-red-700");
+      feedback.classList.add("border-emerald-200", "bg-emerald-50", "text-emerald-700");
       form.reset();
     });
 
     if (!reduceMotion) {
-      gsap.utils.toArray('.reveal').forEach((item) => {
-        gsap.from(item, {
-          y: 34,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 88%'
+      gsap.utils.toArray(".reveal").forEach((item) => {
+        gsap.fromTo(item,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 88%"
+            }
           }
-        });
+        );
       });
 
-      gsap.to('.floating-showcase', {
+      gsap.to(".floating-showcase", {
         y: -12,
         duration: 3.8,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true
       });
 
-      gsap.to('.floating-phone', {
+      gsap.to(".floating-phone", {
         y: -16,
-        duration: 2.9,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1
-      });
-
-      gsap.to('.gold-button', {
-        boxShadow: '0 18px 40px rgba(255, 200, 61, 0.33)',
-        duration: 1.8,
-        ease: 'sine.inOut',
+        duration: 3.1,
+        ease: "sine.inOut",
         repeat: -1,
         yoyo: true
       });
     }
-
-    document.querySelectorAll('.tilt-card').forEach((card) => {
-      card.addEventListener('mousemove', (event) => {
-        if (window.innerWidth < 1024 || reduceMotion) return;
-
-        const rect = card.getBoundingClientRect();
-        const px = (event.clientX - rect.left) / rect.width;
-        const py = (event.clientY - rect.top) / rect.height;
-
-        gsap.to(card, {
-          rotateX: (0.5 - py) * 8,
-          rotateY: (px - 0.5) * 10,
-          transformPerspective: 1200,
-          duration: 0.35,
-          ease: 'power2.out'
-        });
-      });
-
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          rotateX: 0,
-          rotateY: 0,
-          duration: 0.5,
-          ease: 'power3.out'
-        });
-      });
-    });
   </script>
 </body>
 </html>
